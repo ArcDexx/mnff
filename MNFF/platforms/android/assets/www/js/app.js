@@ -28,15 +28,25 @@ angular.module('main', ['ionic', 'starter.controllers'])
     .state('app', {
     url: '/app',
     abstract: true,
-    templateUrl: 'templates/login.html',
+    templateUrl: 'index.html',
     controller: 'AppCtrl'
   })
+  
+  .state('app.login', {
+      url: '/login',
+      views: {
+          'login': {
+              templateUrl: 'templates/login.html',
+              controller: 'LoginCtrl'
+          }
+      }
+  })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.main', {
+    url: '/main',
     views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
+      'main': {
+        templateUrl: 'templates/main.html'
       }
     }
   })
